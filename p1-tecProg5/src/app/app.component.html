@@ -1,0 +1,20 @@
+<h1>Campeonato XYZ</h1>
+
+<form #myForm="ngForm" (Submit)="SaveData(myForm)">
+  <div>
+    <label for="nome">Nome:</label>
+    <input type="text" name="nome" id="nome" ngModel required>
+    <br>
+    <label for="pont">Pontuação:</label>
+    <input type="number" name="pont" id="pont" ngModeln required>
+  </div>
+  <input type="submit" [disabled]="myForm.invalid">
+</form>
+
+<table *ngIf="let time of tabelaTimes" class="tabela">
+  <th>Pontuação</th>
+  <th>Time</th>
+  <tr *ngFor="let time of tabelaTimes">
+    {{time.pontTime}} -- {{time.nomeTime}}
+  </tr>
+</table>
